@@ -1,0 +1,40 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import SocialBar from "../components/SocialBar.astro";
+import Blog from "../components/Blog.astro";
+import Contact from "../components/Contact.astro";
+---
+<!doctype html>
+<html lang="en" style="font-size: 16px">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfolio</title>
+    <meta name="description" content="Personal portfolio" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style is:global>
+      /* Reduce vertical size of each section site-wide */
+      section[id] { padding-top: 2rem; padding-bottom: 2rem; }
+      @media (min-width: 768px) { section[id] { padding-top: 3rem; padding-bottom: 3rem; } }
+      /* Keep About anchor offset comfortable but tighter bottom */
+      section#about { padding-top: 4rem; padding-bottom: 2rem; }
+    </style>
+  </head>
+  <body class="bg-[#EAF2FF] text-zinc-900 antialiased" style="font-family: 'Times New Roman', Times, serif;">
+    <Header />
+    <main id="top" class="mx-auto max-w-7xl px-4 md:px-6">
+      <slot />
+    </main>
+    <Blog />
+    <Contact />
+    <SocialBar />
+    <Footer />
+  </body>
+</html>

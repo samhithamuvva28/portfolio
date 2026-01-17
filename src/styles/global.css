@@ -1,0 +1,23 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html { scroll-behavior: smooth; }
+
+/* Responsive helpers to keep sections centered and readable on any screen */
+@layer components {
+  /* Left-align section headings */
+  section[id] > h2 { @apply text-left; }
+
+  /* Constrain and center section content (slot) */
+  section[id]:not(#about) > :not(h2) { @apply max-w-5xl px-4 md:px-6; }
+
+  /* Left-align all text in sections except About */
+  section[id]:not(#about) { @apply text-left; }
+}
+
+/* Media elements scale with container */
+img, svg, video { max-width: 100%; height: auto; }
+
+/* Improve text sizing on mobile zoom */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }

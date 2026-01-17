@@ -1,0 +1,49 @@
+---
+const githubUrl = "https://github.com/samhithamuvva28";
+const linkedinUrl = "https://www.linkedin.com/in/samhitha-muvva-1b1944189/";
+const email = "samhithamuvva28@gmail.com";
+---
+<section aria-label="Social links" class="py-8">
+  <div class="mx-auto max-w-7xl px-4 md:px-6">
+    <nav class="flex justify-center items-center gap-8">
+      <a data-social href={githubUrl} aria-label="GitHub" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center justify-center p-2 rounded-md text-zinc-700 hover:text-[#15543c] focus:outline-none focus:ring-2 focus:ring-[#15543c]/30">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="currentColor" aria-hidden="true" class="transition-transform duration-200 ease-out will-change-transform">
+          <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.589 2 12.227c0 4.531 2.865 8.372 6.839 9.732.5.096.683-.219.683-.487 0-.241-.009-.879-.014-1.726-2.782.617-3.369-1.37-3.369-1.37-.455-1.178-1.11-1.492-1.11-1.492-.907-.64.069-.627.069-.627 1.003.072 1.53 1.05 1.53 1.05.892 1.561 2.341 1.11 2.91.849.091-.662.35-1.11.636-1.366-2.22-.259-4.555-1.138-4.555-5.063 0-1.118.392-2.033 1.036-2.75-.104-.258-.45-1.298.098-2.706 0 0 .847-.275 2.778 1.05A9.54 9.54 0 0 1 12 7.63c.86.004 1.726.116 2.536.34 1.93-1.325 2.776-1.05 2.776-1.05.55 1.408.204 2.448.1 2.706.646.717 1.035 1.632 1.035 2.75 0 3.934-2.34 4.801-4.566 5.055.36.32.68.95.68 1.916 0 1.383-.012 2.498-.012 2.838 0 .27.18.586.69.486C19.14 20.594 22 16.757 22 12.227 22 6.589 17.523 2 12 2Z" clip-rule="evenodd"/>
+        </svg>
+      </a>
+      <a data-social href={linkedinUrl} aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" class="group inline-flex items-center justify-center p-2 rounded-md text-zinc-700 hover:text-[#15543c] focus:outline-none focus:ring-2 focus:ring-[#15543c]/30">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="currentColor" aria-hidden="true" class="transition-transform duration-200 ease-out will-change-transform">
+          <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.5 8.5h4V24h-4V8.5zM8.5 8.5h3.8v2.1h.05c.53-1 1.83-2.1 3.77-2.1 4.03 0 4.77 2.65 4.77 6.1V24h-4v-7.8c0-1.86-.03-4.25-2.6-4.25-2.6 0-3 2.03-3 4.12V24h-4V8.5z"/>
+        </svg>
+      </a>
+      <a data-social href={`mailto:${email}`} aria-label="Email" class="group inline-flex items-center justify-center p-2 rounded-md text-zinc-700 hover:text-[#15543c] focus:outline-none focus:ring-2 focus:ring-[#15543c]/30">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="36" height="36" fill="currentColor" aria-hidden="true" class="transition-transform duration-200 ease-out will-change-transform">
+          <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/>
+        </svg>
+      </a>
+    </nav>
+  </div>
+</section>
+<script is:inline>
+  const links = document.querySelectorAll('a[data-social]');
+  links.forEach((link) => {
+    const svg = link.querySelector('svg');
+    if (!svg) return;
+    const maxShift = 6; // px
+    function setTransform(x = 0, y = 0, scale = 1) {
+      svg.style.transform = `translate(${x}px, ${y}px) scale(${scale})`;
+    }
+    link.addEventListener('pointerenter', () => setTransform(0, -1, 1.14));
+    link.addEventListener('pointermove', (e) => {
+      const rect = link.getBoundingClientRect();
+      const dx = (e.clientX - rect.left) / rect.width - 0.5;
+      const dy = (e.clientY - rect.top) / rect.height - 0.5;
+      const x = Math.max(Math.min(dx * maxShift, maxShift), -maxShift);
+      const y = Math.max(Math.min(dy * maxShift, maxShift), -maxShift);
+      setTransform(x, y, 1.14);
+    });
+    link.addEventListener('pointerleave', () => setTransform(0, 0, 1));
+    link.addEventListener('pointerdown', () => setTransform(0, 0, 1.22));
+    link.addEventListener('pointerup', () => setTransform(0, -1, 1.14));
+  });
+</script>

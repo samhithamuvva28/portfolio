@@ -1,0 +1,49 @@
+
+---
+import Section from "./Section.astro";
+import vitLogo from "../assets/VIT.png";
+import sjsuLogo from "../assets/SJSU.png";
+---
+<Section id="education" title="">
+  <div class="mx-auto max-w-2xl px-4 md:px-6">
+    <div class="flex flex-col items-center text-center">
+      <div class="relative mx-auto w-3/4 max-w-xl py-6">
+        <div class="h-[2px] w-full bg-zinc-300"></div>
+        <div class="group absolute left-0 top-1/2 -translate-y-1/2">
+          <div class="relative flex flex-col items-center">
+            <span class="mb-2 text-m font-large text-zinc-600">2023</span>
+            <button aria-label="Vellore Institute of Technology, Chennai" class="h-4 w-4 rounded-full bg-[#15543c] ring-4 ring-[#EAF2FF] outline-none focus:ring-2 focus:ring-[#15543c]"></button>
+            <div class="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 mt-3 hidden group-hover:block group-focus-within:block">
+              <div class="w-64 rounded-lg border border-zinc-200 bg-white p-3 text-center shadow-md">
+                <img src={vitLogo.src} width={vitLogo.width} height={vitLogo.height} alt="VIT logo" class="mx-auto mb-2 h-10 w-10 object-contain" loading="lazy" decoding="async" />
+                <p class="text-sm font-semibold text-zinc-900">Vellore Institute of Technology, Chennai</p>
+                <p class="mt-1 text-xs text-zinc-600">B.Tech in Computer Science and Engineering</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="group absolute right-0 top-1/2 -translate-y-1/2">
+          <div class="relative flex flex-col items-center">
+            <span class="mb-2 text-m font-large text-zinc-600">2025</span>
+            <button aria-label="San Jose State University" class="h-4 w-4 rounded-full bg-[#15543c] ring-4 ring-[#EAF2FF] outline-none focus:ring-2 focus:ring-[#15543c]"></button>
+            <div class="pointer-events-none absolute left-1/2 top-full -translate-x-1/2 mt-3 hidden group-hover:block group-focus-within:block">
+              <div class="w-64 rounded-lg border border-zinc-200 bg-white p-3 text-center shadow-md">
+                <img src={sjsuLogo.src} width={sjsuLogo.width} height={sjsuLogo.height} alt="SJSU logo" class="mx-auto mb-2 h-24 w-24 object-contain" loading="lazy" decoding="async" />
+                <p class="text-sm font-semibold text-zinc-900">San Jose State University</p>
+                <p class="mt-1 text-xs text-zinc-600">Master’s in Applied Data Science</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-1 text-base md:text-xl font-semibold tracking-wide uppercase text-zinc-700">Education</div>
+    </div>
+  </div>
+</Section>
+
+<style is:global>
+  /* Reduce top padding and hide default Section heading for Education */
+  section#education > h2 { display: none; }
+  section#education { padding-top: 1rem; }
+  @media (min-width: 768px) { section#education { padding-top: 1.5rem; } }
+</style>

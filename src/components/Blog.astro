@@ -1,0 +1,45 @@
+---
+import Section from "./Section.astro";
+import blog1 from "../assets/blog1.png";
+import blog2 from "../assets/blog2.png";
+import blog3 from "../assets/blog3.png";
+
+const posts = [
+  {
+    title: "The Almost-Math Behind 10,000 in Positional Encoding: Transformer",
+    href: "https://medium.com/@samhitha.muvva/if-youre-here-that-means-you-re-halfway-through-the-attention-is-all-you-need-paper-and-found-c714c3f21c38",
+    image: blog1,
+  },
+  {
+    title: "Embedding Gemma Promised Something Wild. Turns Out, It Delivered.",
+    href: "https://medium.com/@samhitha.muvva/embedding-gemma-promised-something-wild-turns-out-it-delivered-80180661e2f3",
+    image: blog2,
+  },
+  {
+    title: "Decoding PIU: A deep dive into Ioannidis et al.’s 2016 Machine Learning Study",
+    href: "https://medium.com/@samhitha.muvva/decoding-piu-a-deep-dive-into-ioannidis-et-al-s-2016-machine-learning-study-f2103ba5cf21",
+    image: blog3,
+  },
+];
+---
+<Section id="blog" title="Blog">
+  <div class="mt-6 grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+    {posts.map((p) => (
+      <a href={p.href} target="_blank" rel="noopener noreferrer" class="group block overflow-hidden rounded-xl border border-zinc-200 bg-white">
+        <div class="relative aspect-[16/9] bg-zinc-100 overflow-hidden">
+          <img src={p.image.src} width={p.image.width} height={p.image.height} alt={p.title} class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" decoding="async" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+          <div class="absolute bottom-0 p-3 md:p-4 text-white">
+            <h3 class="text-base md:text-lg font-semibold">{p.title}</h3>
+            <span class="mt-2 inline-block rounded bg-[#15543c] px-2.5 py-1 text-xs md:text-sm text-white">Read on Medium →</span>
+          </div>
+        </div>
+      </a>
+    ))}
+  </div>
+</Section>
+
+<style is:global>
+  /* Reduce blog section vertical padding and keep within main content width */
+  section#blog { padding-top: 2rem; padding-bottom: 2rem; }
+</style>
