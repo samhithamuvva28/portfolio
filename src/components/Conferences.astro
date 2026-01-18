@@ -9,9 +9,10 @@ import nvidia from "../assets/nvidia.jpg";
   <div class="relative overflow-hidden">
     <div class="grid min-h-0 grid-cols-1 md:grid-cols-[2fr_1fr] md:grid-rows-3 gap-2 rounded-xl overflow-hidden h-[220px] sm:h-[300px] md:h-[420px] lg:h-[520px]">
       <a href="https://www.linkedin.com/posts/samhitha-muvva-1b1944189_microsoftignite2025-communityrocks-microsoftignite-activity-7398837328309325825-vxF2?utm_source=share&utm_medium=member_desktop&rcm=ACoAACx0nBUBnzV4iyj7yCydohUsHIJAx3egRdk" target="_blank" rel="noopener noreferrer" aria-label="Microsoft Ignite 2025 — LinkedIn post" class="group relative overflow-hidden rounded-none h-full md:col-span-1 md:row-span-3 min-h-0">
-        <img src={ignite.src} width={ignite.width} height={ignite.height} sizes="(min-width: 1024px) 40vw, 100vw" alt="Microsoft Ignite 2025" class="block h-full w-full object-cover object-center scale-[0.97] md:scale-[0.98] transition-transform duration-300" loading="lazy" decoding="async" />
-        <div class="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/40"></div>
-        <div class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
+        <img src={ignite.src} width={ignite.width} height={ignite.height} aria-hidden="true" class="absolute inset-0 h-full w-full object-cover blur-sm scale-[1.06] opacity-40" loading="lazy" decoding="async" />
+        <img src={ignite.src} width={ignite.width} height={ignite.height} sizes="(min-width: 1024px) 40vw, 100vw" alt="Microsoft Ignite 2025" class="relative z-[1] block h-full w-full object-contain object-center" loading="lazy" decoding="async" />
+        <div class="absolute inset-0 z-[2] bg-black/0 transition-colors duration-300 group-hover:bg-black/40"></div>
+        <div class="absolute inset-0 z-[3] flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100">
           <span class="text-white text-xs md:text-sm font-semibold drop-shadow">Microsoft Ignite 2025</span>
         </div>
       </a>
@@ -22,13 +23,6 @@ import nvidia from "../assets/nvidia.jpg";
           <span class="text-white text-xs md:text-sm font-semibold drop-shadow">Google Cloud-Accelerate with AI</span>
         </div>
       </a>
-      <div class="group relative overflow-hidden rounded-none h-full cursor-default select-none md:col-span-1 md:row-span-1 min-h-0" aria-hidden="true">
-        <img src={ghc.src} width={ghc.width} height={ghc.height} sizes="(min-width: 1024px) 25vw, 100vw" alt="Grace Hopper Celebration (GHC)" class="block h-full w-full object-cover object-center scale-[0.97] md:scale-[0.98] transition-transform duration-300" loading="lazy" decoding="async" />
-        <div class="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/40"></div>
-        <div class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-          <span class="text-white text-xs md:text-sm font-semibold drop-shadow">GHC'25</span>
-        </div>
-      </div>
       <a href="https://www.linkedin.com/posts/samhitha-muvva-1b1944189_gtc2025-nvidia-techsuperbowl-activity-7310820642314989568-Cb1k?utm_source=share&utm_medium=member_desktop&rcm=ACoAACx0nBUBnzV4iyj7yCydohUsHIJAx3egRdk" target="_blank" rel="noopener noreferrer" aria-label="NVIDIA GTC 2025 — LinkedIn post" class="group relative overflow-hidden rounded-none h-full md:col-span-1 md:row-span-1 min-h-0">
         <img src={nvidia.src} width={nvidia.width} height={nvidia.height} sizes="(min-width: 1024px) 25vw, 100vw" alt="NVIDIA GTC 2025" class="block h-full w-full object-cover object-center scale-[0.97] md:scale-[0.98] transition-transform duration-300" loading="lazy" decoding="async" />
         <div class="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/40"></div>
@@ -36,6 +30,13 @@ import nvidia from "../assets/nvidia.jpg";
           <span class="text-white text-xs md:text-sm font-semibold drop-shadow">NVIDIA GTC 2025</span>
         </div>
       </a>
+      <div class="group relative overflow-hidden rounded-none h-full cursor-default select-none md:col-span-1 md:row-span-1 min-h-0" aria-hidden="true">
+        <img src={ghc.src} width={ghc.width} height={ghc.height} sizes="(min-width: 1024px) 25vw, 100vw" alt="Grace Hopper Celebration (GHC)" class="block h-full w-full object-cover object-center scale-[0.97] md:scale-[0.98] transition-transform duration-300" loading="lazy" decoding="async" />
+        <div class="absolute inset-0 bg-black/0 transition-colors duration-300 group-hover:bg-black/40"></div>
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+          <span class="text-white text-xs md:text-sm font-semibold drop-shadow">GHC'25</span>
+        </div>
+      </div>
     </div>
     <div class="pointer-events-none absolute inset-0 z-10 flex items-center justify-center">
       <span class="rounded-md bg-white/80 text-zinc-900 text-sm md:text-base font-semibold px-5 md:px-6 py-2 md:py-2.5 shadow-sm ring-1 ring-white/70 backdrop-blur-sm">Conferences & Volunteering</span>

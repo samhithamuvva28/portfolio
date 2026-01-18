@@ -7,6 +7,8 @@ import ldmImage from "../assets/ldm.png";
 import fineTuningImage from "../assets/llmfinetuning.png";
 import politicastImg from "../assets/politicast.jpeg";
 import pocketrangerImg from "../assets/pocketranger.png";
+import awsLogo from "../assets/AWS.png";
+import powerbiLogo from "../assets/powerbi.jpg";
 const slugMap = {
   React: "react",
   "Node.js": "nodedotjs",
@@ -45,7 +47,14 @@ const slugMap = {
   Tableau: "tableau",
 };
 
-const iconUrl = (name: string) => `https://cdn.simpleicons.org/${slugMap[name] ?? name.toLowerCase()}`;
+const iconUrl = (name: string) => {
+  const local: Record<string, string> = {
+    AWS: awsLogo.src,
+    PowerBI: powerbiLogo.src,
+    "Power BI": powerbiLogo.src,
+  };
+  return local[name] ?? `https://cdn.simpleicons.org/${slugMap[name] ?? name.toLowerCase()}`;
+};
 
 const projects = [
   {
@@ -113,7 +122,7 @@ const projects = [
     title: "Fine-Tuning of Large Language Models: A Comparative Analysis",
     href: "https://github.com/samhithamuvva28/Dis-Easify_Deployment",
     image: fineTuningImage.src,
-    techs: ["DeepSeek R1", "GRPO", "LLAMA", "Mistral", "QWEN", "Phi", "Nvidia GTX 5090", "Unsloth"],
+    techs: ["DeepSeek R1", "LLAMA", "Mistral", "QWEN", "Phi", "Nvidia GTX 5090", "Unsloth"],
     bullets: [
       "Queue-based processing",
       "Transactional writes",

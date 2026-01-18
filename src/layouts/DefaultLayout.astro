@@ -34,6 +34,17 @@ import Contact from "../components/Contact.astro";
       section[id] > h2 { text-align: left; max-width: 72rem; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
       /* Center section content blocks under the headings */
       section[id] > *:not(h2) { max-width: 72rem; margin-left: auto; margin-right: auto; }
+      /* Cursor ripple that follows the pointer */
+      :root { --ripple-x: -100px; --ripple-y: -100px; }
+      .cursor-ripple {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 50;
+        background:
+          radial-gradient(80px circle at var(--ripple-x) var(--ripple-y), rgba(21, 84, 60, 0.22), rgba(21, 84, 60, 0) 65%),
+          radial-gradient(220px circle at var(--ripple-x) var(--ripple-y), rgba(21, 84, 60, 0.10), rgba(21, 84, 60, 0) 70%);
+      }
     </style>
   </head>
   <body class="bg-[#EAF2FF] text-zinc-900 antialiased" style="font-family: 'Times New Roman', Times, serif;">
@@ -47,5 +58,25 @@ import Contact from "../components/Contact.astro";
     <Contact />
     <SocialBar />
     <Footer />
+    <div class="cursor-ripple" aria-hidden="true"></div>
+    <script>
+      (function () {
+        try {
+          if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+          var root = document.documentElement;
+          var x = -100, y = -100;
+          var rafId = 0;
+          function animate() {
+            root.style.setProperty('--ripple-x', x + 'px');
+            root.style.setProperty('--ripple-y', y + 'px');
+            rafId = 0;
+          }
+          window.addEventListener('mousemove', function (e) {
+            x = e.clientX; y = e.clientY;
+            if (!rafId) rafId = requestAnimationFrame(animate);
+          }, { passive: true });
+        } catch (e) {}
+      })();
+    </script>
   </body>
 </html>

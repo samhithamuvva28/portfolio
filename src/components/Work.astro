@@ -5,6 +5,10 @@ import tectoroLogo from "../assets/tectoro.png";
 import dxcLogo from "../assets/DXC_Technology.png";
 import fiservLogo from "../assets/Fiserv.png";
 
+import awsLogo from "../assets/AWS.png";
+import gSuiteLogo from "../assets/G-Suite.png";
+import powerbiLogo from "../assets/powerbi.jpg";
+
 const slugMap = {
   React: "react",
   "Node.js": "nodedotjs",
@@ -39,10 +43,17 @@ const slugMap = {
 };
 
 const iconUrl = (name: string) => {
+  const local: Record<string, string> = {
+    AWS: awsLogo.src,
+    PowerBI: powerbiLogo.src,
+    "Power BI": powerbiLogo.src,
+    Gsuite: gSuiteLogo.src,
+    GSuite: gSuiteLogo.src,
+    "G Suite": gSuiteLogo.src,
+    "Google Workspace": gSuiteLogo.src,
+  };
+  if (local[name]) return local[name];
   const devicons: Record<string, string> = {
-    AWS: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
-    PowerBI: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powerbi/powerbi-original.svg",
-    "Power BI": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powerbi/powerbi-original.svg",
     Java: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
   };
   return devicons[name] ?? `https://cdn.simpleicons.org/${slugMap[name] ?? name.toLowerCase()}`;
@@ -76,7 +87,7 @@ const stacks = {
             {stacks.referu.sort().map((t) => (
               <span class="inline-flex items-center gap-1 rounded-md bg-zinc-100 px-2 py-0.5 text-xs text-zinc-700">
                 {slugMap[t] && (
-                  <img src={iconUrl(t)} alt={`${t} logo`} width="20" height="20" class="inline-block h-5 w-5 align-middle object-contain shrink-0" loading="lazy" decoding="async" />
+                  <img src={iconUrl(t)} data-fallback={`https://cdn.simpleicons.org/${slugMap[t] ?? t.toLowerCase()}`} onerror="this.onerror=null; if(this.dataset.fallback) this.src=this.dataset.fallback" alt={`${t} logo`} width="20" height="20" class="inline-block h-5 w-5 align-middle object-contain shrink-0" loading="lazy" decoding="async" />
                 )}
                 {t}
               </span>
@@ -104,7 +115,7 @@ const stacks = {
             {stacks.tectoro.sort().map((t) => (
               <span class="inline-flex items-center gap-1 rounded-md bg-zinc-100 px-2 py-0.5 text-xs text-zinc-700">
                 {slugMap[t] && (
-                  <img src={iconUrl(t)} alt={`${t} logo`} width="20" height="20" class="inline-block h-5 w-5 align-middle object-contain shrink-0" loading="lazy" decoding="async" />
+                  <img src={iconUrl(t)} data-fallback={`https://cdn.simpleicons.org/${slugMap[t] ?? t.toLowerCase()}`} onerror="this.onerror=null; if(this.dataset.fallback) this.src=this.dataset.fallback" alt={`${t} logo`} width="20" height="20" class="inline-block h-5 w-5 align-middle object-contain shrink-0" loading="lazy" decoding="async" />
                 )}
                 {t}
               </span>
@@ -131,7 +142,7 @@ const stacks = {
             {stacks.dxc.sort().map((t) => (
               <span class="inline-flex items-center gap-1 rounded-md bg-zinc-100 px-2 py-0.5 text-xs text-zinc-700">
                 {slugMap[t] && (
-                  <img src={iconUrl(t)} alt={`${t} logo`} width="20" height="20" class="inline-block h-5 w-5 align-middle object-contain shrink-0" loading="lazy" decoding="async" />
+                  <img src={iconUrl(t)} data-fallback={`https://cdn.simpleicons.org/${slugMap[t] ?? t.toLowerCase()}`} onerror="this.onerror=null; if(this.dataset.fallback) this.src=this.dataset.fallback" alt={`${t} logo`} width="20" height="20" class="inline-block h-5 w-5 align-middle object-contain shrink-0" loading="lazy" decoding="async" />
                 )}
                 {t}
               </span>
@@ -158,7 +169,7 @@ const stacks = {
             {stacks.fiserv.sort().map((t) => (
               <span class="inline-flex items-center gap-1 rounded-md bg-zinc-100 px-2 py-0.5 text-xs text-zinc-700">
                 {slugMap[t] && (
-                  <img src={iconUrl(t)} alt={`${t} logo`} width="20" height="20" class="inline-block h-5 w-5 align-middle object-contain shrink-0" loading="lazy" decoding="async" />
+                  <img src={iconUrl(t)} data-fallback={`https://cdn.simpleicons.org/${slugMap[t] ?? t.toLowerCase()}`} onerror="this.onerror=null; if(this.dataset.fallback) this.src=this.dataset.fallback" alt={`${t} logo`} width="20" height="20" class="inline-block h-5 w-5 align-middle object-contain shrink-0" loading="lazy" decoding="async" />
                 )}
                 {t}
               </span>
