@@ -3,14 +3,19 @@ import profile from "../assets/Photo.jpeg";
 ---
 <section id="about" class="scroll-mt-24 pt-16 md:pt-20 pb-12 md:pb-14">
   <div class="mx-auto max-w-3xl px-4 md:px-6 text-center">
-    <div class="mx-auto h-44 w-44 md:h-56 md:w-56 rounded-full overflow-hidden ring-2 ring-[#e2dfd5] bg-[#e6eaef]">
-      <img src={profile.src} width={profile.width} height={profile.height} alt="Portrait of Muvva Durga Samhitha" class="h-full w-full object-cover" loading="lazy" decoding="async" />
+    <div class="mx-auto h-44 w-44 md:h-56 md:w-56 rounded-full overflow-hidden ring-2 ring-[#e2dfd5] bg-[#e6eaef] group transform transition-transform duration-500 will-change-transform hover:scale-[1.02]">
+      <img src={profile.src} width={profile.width} height={profile.height} alt="Portrait of Muvva Durga Samhitha" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105 group-hover:-translate-y-0.5" loading="lazy" decoding="async" />
     </div>
     <h3 class="mt-8 text-xl md:text-xl font-normal tracking-tight">If you’ve found your way here, here’s a little about me!</h3>
     <div class="mx-auto mt-6 max-w-2xl space-y-4 text-zinc-700">
-      <p class="leading-7 font-semibold text-lg">Hey there! I’m Samhitha.</p>
-      <p class="leading-7">I’m a software engineer focused on building end-to-end machine learning workflows and production-grade AI systems - designed to be scalable, reliable, and efficient in the real world. I’m especially drawn to work at the intersection of software, data, and cloud infrastructure.</p>
-      <p class="leading-7">When I’m not building systems, you’ll often find me in the kitchen - cooking is my jam, and dancing is how I shake the stress away.</p>
+      <p class="leading-7 font-semibold text-lg"><span class="typewriter">Hey there! I’m SAMHITHA.</span></p>
+      <p class="leading-7">I’m a software engineer focused on building end-to-end machine learning workflows and production-grade AI systems - designed to be scalable, reliable, and efficient in the real world. I’m especially drawn to work at the intersection of software, data, and cloud infrastructure. When I’m not building systems, you’ll often find me in the kitchen - cooking is my jam, and dancing is how I shake the stress away.</p>
     </div>
   </div>
 </section>
+<style>
+  .typewriter{display:inline-block;white-space:nowrap;overflow:hidden;width:0ch;animation:typing 2.1s steps(25,end) 0.2s forwards}
+  @keyframes typing{to{width:25ch}}
+  @media (min-width:768px){.typewriter{animation-duration:2.4s}}
+  @media (prefers-reduced-motion:reduce){.typewriter{animation:none;width:auto}}
+</style>

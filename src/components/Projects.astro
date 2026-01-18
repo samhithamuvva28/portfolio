@@ -2,6 +2,7 @@
 ---
 import Section from "./Section.astro";
 import catelytics from "../assets/catelytics.png";
+import pulsenet from "../assets/pulsenet.png";
 
 const slugMap = {
   React: "react",
@@ -17,6 +18,10 @@ const slugMap = {
   Databricks: "databricks",
   AWS: "amazonaws",
   Weaviate: "weaviate",
+  NumPy: "numpy",
+  Pandas: "pandas",
+  BigQuery: "googlebigquery",
+  Tableau: "tableau",
 };
 
 const iconUrl = (name: string) => `https://cdn.simpleicons.org/${slugMap[name] ?? name.toLowerCase()}`;
@@ -35,11 +40,11 @@ const projects = [
     ],
   },
   {
-    id: "project-two",
-    title: "Project Two",
-    href: "https://github.com/USERNAME/project-two",
-    image: "https://via.placeholder.com/800x600?text=Project+Two",
-    techs: ["Python", "FastAPI", "Docker"],
+    id: "PulseNet",
+    title: "PulseNet:Problematic Internet Usage in Children",
+    href: "https://github.com/samhithamuvva28/PulseNet",
+    image: pulsenet.src,
+    techs: ["Python", "NumPy", "Pandas"],
     bullets: [
       "FastAPI microservice architecture",
       "Dockerized with multi-stage builds",
@@ -47,11 +52,11 @@ const projects = [
     ],
   },
   {
-    id: "project-three",
-    title: "Project Three",
-    href: "https://github.com/USERNAME/project-three",
-    image: "https://via.placeholder.com/800x600?text=Project+Three",
-    techs: ["Astro", "Tailwind", "TypeScript"],
+    id: "PolitiCast",
+    title: "PolitiCast : Election Analytics Data Pipeline",
+    href: "https://github.com/samhithamuvva28/PolitiCast",
+    image: "https://via.placeholder.com/800x600?text=PolitiCast",
+    techs: ["AWS", "BigQuery","SQL", "Tableau", "Python"],
     bullets: [
       "Static-first site with islands",
       "Accessible components",
@@ -59,11 +64,11 @@ const projects = [
     ],
   },
   {
-    id: "project-four",
-    title: "Project Four",
-    href: "https://github.com/USERNAME/project-four",
+    id: "pocket ranger",
+    title: "EmbeddingGemma: Pocket Ranger",
+    href: "https://github.com/samhithamuvva28/PocketRanger_EmbeddingGemma",
     image: "https://via.placeholder.com/800x600?text=Project+Four",
-    techs: ["React", "TypeScript"],
+    techs: ["Python", "FAISS", "Gradio","API Endpoints"],
     bullets: [
       "Component library with Storybook",
       "Unit tests with Jest/RTL",
@@ -71,9 +76,9 @@ const projects = [
     ],
   },
   {
-    id: "project-five",
-    title: "Project Five",
-    href: "https://github.com/USERNAME/project-five",
+    id: "LDM",
+    title: "Visual Learning Assitant using Latent Diffusion",
+    href: "https://github.com/samhithamuvva28/Visual_Learning_Assitant_LDM",
     image: "https://via.placeholder.com/800x600?text=Project+Five",
     techs: ["Python", "Docker"],
     bullets: [
@@ -83,9 +88,9 @@ const projects = [
     ],
   },
   {
-    id: "project-six",
-    title: "Project Six",
-    href: "https://github.com/USERNAME/project-six",
+    id: "llm fine-tuning",
+    title: "Fine-Tuning of Large Language Models: A Comparative Analysis",
+    href: "https://github.com/samhithamuvva28/Dis-Easify_Deployment",
     image: "https://via.placeholder.com/800x600?text=Project+Six",
     techs: ["Node.js", "PostgreSQL"],
     bullets: [
@@ -96,7 +101,7 @@ const projects = [
   },
 ];
 ---
-<Section id="projects" title="What I’ve Done">
+<Section id="projects" title="Some of My Work">
   <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mx-auto">
     {projects.map((p) => (
       <div class="group block overflow-hidden rounded-xl border border-zinc-200 bg-white">
@@ -105,7 +110,7 @@ const projects = [
         </div>
         <div class="p-4">
           <h3 class="font-semibold text-center">{p.title}</h3>
-          <div class="mt-3 flex flex-wrap items-center gap-2">
+          <div class="mt-3 flex flex-wrap items-center justify-center gap-2">
             {p.techs.map((t) => (
               <span class="inline-flex items-center gap-1 rounded-md bg-zinc-100 px-2 py-0.5 text-xs text-zinc-700">
                 {slugMap[t] && (
@@ -115,71 +120,20 @@ const projects = [
               </span>
             ))}
           </div>
-          <div class="mt-4 flex items-center gap-3">
-            <button type="button" data-open-modal={`modal-${p.id}`} class="rounded-md border border-zinc-300 px-3 py-1.5 text-sm hover:border-[#15543c] hover:text-[#15543c]">Details</button>
+          <div class="mt-4 flex items-center justify-center">
             <a href={p.href} target="_blank" rel="noopener noreferrer" class="rounded-md bg-[#15543c] px-3 py-1.5 text-sm text-white hover:opacity-90">GitHub</a>
           </div>
         </div>
       </div>
     ))}
   </div>
-
-  {/* Modals */}
-  {projects.map((p) => (
-    <div id={`modal-${p.id}`} class="fixed inset-0 z-50 hidden" aria-hidden="true">
-      <div class="absolute inset-0 bg-black/50" data-close-modal={`modal-${p.id}`}></div>
-      <div class="relative mx-auto my-10 w-[92%] max-w-xl rounded-xl bg-white p-6 shadow-lg">
-        <div class="flex items-center justify-between gap-3">
-          <h3 class="text-lg font-semibold">{p.title}</h3>
-          <button type="button" aria-label="Close" class="inline-flex items-center justify-center rounded-md p-1.5 text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100" data-close-modal={`modal-${p.id}`}>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-        <ul class="mt-4 list-disc space-y-2 pl-5 text-sm text-zinc-700">
-          {p.bullets.map((b) => <li>{b}</li>)}
-        </ul>
-        <div class="mt-6 flex justify-end gap-3">
-          <a href={p.href} target="_blank" rel="noopener noreferrer" class="rounded-md bg-[#15543c] px-3 py-1.5 text-sm text-white hover:opacity-90">View on GitHub</a>
-        </div>
-      </div>
-    </div>
-  ))}
 </Section>
 
 <style is:global>
-  section#projects > h2 { text-align: center; }
+  section#projects > h2 { text-align: left; }
   section#projects > div { margin-left: auto; margin-right: auto; }
   @media (min-width: 1024px) {
     section#projects > div { max-width: 72rem; }
   }
 </style>
 
-<script is:inline>
-  (function(){
-    const openers = document.querySelectorAll('[data-open-modal]');
-    function openModal(id){
-      const m = document.getElementById(id);
-      if(!m) return;
-      m.classList.remove('hidden');
-      document.documentElement.classList.add('overflow-hidden');
-      const closerSel = `[data-close-modal="${id}"]`;
-      const closers = m.querySelectorAll(closerSel);
-      const onEsc = (e) => { if(e.key === 'Escape'){ closeModal(id); document.removeEventListener('keydown', onEsc); } };
-      document.addEventListener('keydown', onEsc);
-      closers.forEach((c)=> c.addEventListener('click', () => closeModal(id), { once: true }));
-    }
-    function closeModal(id){
-      const m = document.getElementById(id);
-      if(!m) return;
-      m.classList.add('hidden');
-      document.documentElement.classList.remove('overflow-hidden');
-    }
-    openers.forEach((el)=>{
-      const id = el.getAttribute('data-open-modal');
-      if(!id) return;
-      el.addEventListener('click', () => openModal(id));
-    });
-  })();
-</script>

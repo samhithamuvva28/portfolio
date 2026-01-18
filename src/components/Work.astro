@@ -1,13 +1,81 @@
 ---
 import Section from "./Section.astro";
+import referuLogo from "../assets/referuai_logo.jpg";
+import tectoroLogo from "../assets/tectoro.png";
+import dxcLogo from "../assets/DXC_Technology.png";
+import fiservLogo from "../assets/Fiserv.png";
 ---
 <Section id="work" title="Where I’ve Worked">
-  <div class="mt-4 space-y-4 text-zinc-700 dark:text-zinc-300">
-    <p>Explore my recent work across:</p>
-    <ul class="list-disc pl-6 space-y-1">
-      <li><a href="#experience" class="underline hover:text-[#15543c]">Experience</a></li>
-      <li><a href="#projects" class="underline hover:text-[#15543c]">What I’ve Done</a></li>
-      <li><a href="#blog" class="underline hover:text-[#15543c]">Blog</a></li>
-    </ul>
+  <div class="mt-4 mx-auto max-w-3xl space-y-6">
+    <a href="https://referu.ai/" target="_blank" rel="noopener noreferrer" class="group block rounded-xl border border-[#D8E7FF] bg-[#EEF5FF] p-4 md:p-5 shadow-sm transition-colors hover:bg-white hover:shadow-md transform transition-transform duration-300 will-change-transform hover:scale-[1.03] hover:-translate-y-0.5">
+      <div class="flex items-start gap-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:scale-[1.01]">
+        <img src={referuLogo.src} width={referuLogo.width} height={referuLogo.height} alt="ReferU.AI logo" class="h-12 w-12 rounded-sm object-contain bg-white" loading="lazy" decoding="async" />
+        <div>
+          <h3 class="text-base md:text-lg font-semibold text-zinc-900 flex items-center gap-2">AI Engineer · ReferU.AI
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" class="text-zinc-500 transition-transform group-hover:text-[#15543c] group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          </h3>
+          <div class="text-xs md:text-sm text-zinc-600">Delaware, USA · Jun 2025–Present</div>
+          <ul class="mt-2 list-disc pl-5 space-y-1 text-zinc-700">
+            <li>Deployed a production-grade agentic RAG system for automated legal document drafting across intent extraction, retrieval, reasoning, and validation stages.</li>
+            <li>Architected multi-agent workflows to coordinate retrieval, synthesis, and consistency verification, enabling modular scaling and independent component iteration.</li>
+            <li>Designed a structured metadata and embedding layer supporting clause, jurisdiction, and version-level retrieval across 58+ regions, improving retrieval precision by 18%.</li>
+            <li>Built evaluation, freshness, and risk-scoring to monitor hallucination risk, source reliability, and data drift for continuous model QA.</li>
+            <li>Operationalized training, evaluation, and deployment pipelines, reducing retraining cycles by 38% and improving query latency by 18% via optimization and caching.</li>
+          </ul>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://www.tectoro.com/" target="_blank" rel="noopener noreferrer" class="group block rounded-xl border border-[#D8E7FF] bg-[#EEF5FF] p-4 md:p-5 shadow-sm transition-colors hover:bg-white hover:shadow-md transform transition-transform duration-300 will-change-transform hover:scale-[1.03] hover:-translate-y-0.5">
+      <div class="flex items-start gap-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:scale-[1.01]">
+        <img src={tectoroLogo.src} width={tectoroLogo.width} height={tectoroLogo.height} alt="Tectoro logo" class="h-12 w-12 rounded-sm object-contain bg-white" loading="lazy" decoding="async" />
+        <div>
+          <h3 class="text-base md:text-lg font-semibold text-zinc-900 flex items-center gap-2">AI Engineer · Tectoro
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" class="text-zinc-500 transition-transform group-hover:text-[#15543c] group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          </h3>
+          <div class="text-xs md:text-sm text-zinc-600">Hyderabad, India · Oct 2022–Nov 2023</div>
+          <ul class="mt-2 list-disc pl-5 space-y-1 text-zinc-700">
+            <li>Built time-series (ARIMA) models on large-scale e-commerce and marketing data to forecast user behavior and usage trends for campaign planning.</li>
+            <li>Developed end-to-end ML pipelines for ingestion, feature prep, training, and evaluation using AWS Glue, S3, and Athena, enabling reliable large-scale processing.</li>
+            <li>Improved pipeline performance via tuned joins, partitions, and memory usage, reducing processing delays by 32%.</li>
+            <li>Partnered with analytics and platform teams to translate model outputs into dashboards on usage patterns, risk signals, and operational efficiency.</li>
+          </ul>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://dxc.com/" target="_blank" rel="noopener noreferrer" class="group block rounded-xl border border-[#D8E7FF] bg-[#EEF5FF] p-4 md:p-5 shadow-sm transition-colors hover:bg-white hover:shadow-md transform transition-transform duration-300 will-change-transform hover:scale-[1.03] hover:-translate-y-0.5">
+      <div class="flex items-start gap-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:scale-[1.01]">
+        <img src={dxcLogo.src} width={dxcLogo.width} height={dxcLogo.height} alt="DXC Technology logo" class="h-12 w-12 rounded-sm object-contain bg-white" loading="lazy" decoding="async" />
+        <div>
+          <h3 class="text-base md:text-lg font-semibold text-zinc-900 flex items-center gap-2">Software Engineer Intern · DXC Technology
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" class="text-zinc-500 transition-transform group-hover:text-[#15543c] group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          </h3>
+          <div class="text-xs md:text-sm text-zinc-600">India · Nov 2019–Jan 2020</div>
+          <ul class="mt-2 list-disc pl-5 space-y-1 text-zinc-700">
+            <li>Supported development of data-monitoring and anomaly-detection pipelines for enterprise infrastructure logs, enabling early identification of service-level deviations.</li>
+            <li>Conducted root-cause analysis on incident patterns to enhance model explainability and improve alert precision by 8%.</li>
+            <li>Automated data ingestion workflows in Hive + Java, improving operational analytics throughput by 35%.</li>
+          </ul>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://www.fiserv.com/en.html" target="_blank" rel="noopener noreferrer" class="group block rounded-xl border border-[#D8E7FF] bg-[#EEF5FF] p-4 md:p-5 shadow-sm transition-colors hover:bg-white hover:shadow-md transform transition-transform duration-300 will-change-transform hover:scale-[1.03] hover:-translate-y-0.5">
+      <div class="flex items-start gap-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:scale-[1.01]">
+        <img src={fiservLogo.src} width={fiservLogo.width} height={fiservLogo.height} alt="Fiserv logo" class="h-12 w-12 rounded-sm object-contain bg-white" loading="lazy" decoding="async" />
+        <div>
+          <h3 class="text-base md:text-lg font-semibold text-zinc-900 flex items-center gap-2">Software Engineer Intern · Fiserv
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" class="text-zinc-500 transition-transform group-hover:text-[#15543c] group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
+          </h3>
+          <div class="text-xs md:text-sm text-zinc-600">Location · Dates</div>
+          <ul class="mt-2 list-disc pl-5 space-y-1 text-zinc-700">
+            <li>Supported development of data-monitoring and anomaly-detection pipelines for enterprise infrastructure logs, enabling early identification of service-level deviations.</li>
+            <li>Conducted root-cause analysis on incident patterns to enhance model explainability and improve alert precision by 8%.</li>
+            <li>Automated data ingestion workflows in Hive + Java, improving operational analytics throughput by 35%.</li>
+          </ul>
+        </div>
+      </div>
+    </a>
   </div>
 </Section>

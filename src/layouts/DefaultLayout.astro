@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import SocialBar from "../components/SocialBar.astro";
 import Blog from "../components/Blog.astro";
+import Conferences from "../components/Conferences.astro";
 import Contact from "../components/Contact.astro";
 ---
 <!doctype html>
@@ -25,6 +26,13 @@ import Contact from "../components/Contact.astro";
       @media (min-width: 768px) { section[id] { padding-top: 3rem; padding-bottom: 3rem; } }
       /* Keep About anchor offset comfortable but tighter bottom */
       section#about { padding-top: 4rem; padding-bottom: 2rem; }
+      /* Smaller section headings site-wide */
+      section[id] > h2 { font-size: 1.25rem; line-height: 1.75rem; }
+      @media (min-width: 768px) { section[id] > h2 { font-size: 1.5rem; line-height: 2rem; } }
+      /* Left-align all section headings but keep them within a centered content width */
+      section[id] > h2 { text-align: left; max-width: 72rem; margin-left: auto; margin-right: auto; padding-left: 1rem; padding-right: 1rem; }
+      /* Center section content blocks under the headings */
+      section[id] > *:not(h2) { max-width: 72rem; margin-left: auto; margin-right: auto; }
     </style>
   </head>
   <body class="bg-[#EAF2FF] text-zinc-900 antialiased" style="font-family: 'Times New Roman', Times, serif;">
@@ -32,6 +40,7 @@ import Contact from "../components/Contact.astro";
     <main id="top" class="mx-auto max-w-7xl px-4 md:px-6">
       <slot />
     </main>
+    <Conferences />
     <Blog />
     <Contact />
     <SocialBar />
