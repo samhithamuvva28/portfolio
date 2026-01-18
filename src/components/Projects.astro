@@ -3,7 +3,10 @@
 import Section from "./Section.astro";
 import catelytics from "../assets/catelytics.png";
 import pulsenet from "../assets/pulsenet.png";
-
+import ldmImage from "../assets/ldm.png";
+import fineTuningImage from "../assets/llmfinetuning.png";
+import politicastImg from "../assets/politicast.jpeg";
+import pocketrangerImg from "../assets/pocketranger.png";
 const slugMap = {
   React: "react",
   "Node.js": "nodedotjs",
@@ -17,6 +20,24 @@ const slugMap = {
   "Apache Spark": "apachespark",
   Databricks: "databricks",
   AWS: "amazonaws",
+  PyTorch: "pytorch",
+  "Hugging Face": "huggingface",
+  HuggingFace: "huggingface",
+  NVIDIA: "nvidia",
+  "NVIDIA RTX 4090": "nvidia",
+  "Nvidia GTX 5090": "nvidia",
+  "NVIDIA GTX 5090": "nvidia",
+  Torchvision: "pytorch",
+  BLIP: "salesforce",
+  "LLaVA-1.5-7B": "huggingface",
+  LLAMA: "meta",
+  LLaMA: "meta",
+  Llama: "meta",
+  Mistral: "mistral",
+  QWEN: "alibabacloud",
+  Qwen: "alibabacloud",
+  Phi: "microsoft",
+  "DeepSeek R1": "deepseek",
   Weaviate: "weaviate",
   NumPy: "numpy",
   Pandas: "pandas",
@@ -55,7 +76,7 @@ const projects = [
     id: "PolitiCast",
     title: "PolitiCast : Election Analytics Data Pipeline",
     href: "https://github.com/samhithamuvva28/PolitiCast",
-    image: "https://via.placeholder.com/800x600?text=PolitiCast",
+    image: politicastImg.src,
     techs: ["AWS", "BigQuery","SQL", "Tableau", "Python"],
     bullets: [
       "Static-first site with islands",
@@ -67,7 +88,7 @@ const projects = [
     id: "pocket ranger",
     title: "EmbeddingGemma: Pocket Ranger",
     href: "https://github.com/samhithamuvva28/PocketRanger_EmbeddingGemma",
-    image: "https://via.placeholder.com/800x600?text=Project+Four",
+    image: pocketrangerImg.src,
     techs: ["Python", "FAISS", "Gradio","API Endpoints"],
     bullets: [
       "Component library with Storybook",
@@ -79,8 +100,8 @@ const projects = [
     id: "LDM",
     title: "Visual Learning Assitant using Latent Diffusion",
     href: "https://github.com/samhithamuvva28/Visual_Learning_Assitant_LDM",
-    image: "https://via.placeholder.com/800x600?text=Project+Five",
-    techs: ["Python", "Docker"],
+    image: ldmImage.src,
+    techs: ["BLIP", "PyTorch", "Hugging Face", "NVIDIA RTX 4090", "LLaVA-1.5-7B", "Torchvision"],
     bullets: [
       "ETL pipeline with retries",
       "Containerized workers",
@@ -91,8 +112,8 @@ const projects = [
     id: "llm fine-tuning",
     title: "Fine-Tuning of Large Language Models: A Comparative Analysis",
     href: "https://github.com/samhithamuvva28/Dis-Easify_Deployment",
-    image: "https://via.placeholder.com/800x600?text=Project+Six",
-    techs: ["Node.js", "PostgreSQL"],
+    image: fineTuningImage.src,
+    techs: ["DeepSeek R1", "GRPO", "LLAMA", "Mistral", "QWEN", "Phi", "Nvidia GTX 5090", "Unsloth"],
     bullets: [
       "Queue-based processing",
       "Transactional writes",

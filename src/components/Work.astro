@@ -4,6 +4,56 @@ import referuLogo from "../assets/referuai_logo.jpg";
 import tectoroLogo from "../assets/tectoro.png";
 import dxcLogo from "../assets/DXC_Technology.png";
 import fiservLogo from "../assets/Fiserv.png";
+
+const slugMap = {
+  React: "react",
+  "Node.js": "nodedotjs",
+  PostgreSQL: "postgresql",
+  PostGreSQL: "postgresql",
+  Python: "python",
+  FastAPI: "fastapi",
+  Docker: "docker",
+  Docer: "docker",
+  Astro: "astro",
+  Tailwind: "tailwindcss",
+  TypeScript: "typescript",
+  "Apache Spark": "apachespark",
+  Databricks: "databricks",
+  AWS: "amazonaws",
+  Weaviate: "weaviate",
+  NumPy: "numpy",
+  Pandas: "pandas",
+  BigQuery: "googlebigquery",
+  Tableau: "tableau",
+  Java: "java",
+  "Apache Hive": "apachehive",
+  Notion: "notion",
+  GSuite: "googleworkspace",
+  Gsuite: "googleworkspace",
+  "G Suite": "googleworkspace",
+  PowerBI: "powerbi",
+  "Power BI": "powerbi",
+  "C++": "cplusplus",
+  Bash: "gnubash",
+  Linux: "linux",
+};
+
+const iconUrl = (name: string) => {
+  const devicons: Record<string, string> = {
+    AWS: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg",
+    PowerBI: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powerbi/powerbi-original.svg",
+    "Power BI": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/powerbi/powerbi-original.svg",
+    Java: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg",
+  };
+  return devicons[name] ?? `https://cdn.simpleicons.org/${slugMap[name] ?? name.toLowerCase()}`;
+};
+
+const stacks = {
+  referu: ["PostGreSQL", "Python", "Docker", "FastAPI", "Gsuite", "Notion"],
+  tectoro: ["AWS", "Python", "Pandas", "NumPy", "PowerBI", "Agile"],
+  dxc: ["C++", "Bash", "Linux"],
+  fiserv: ["Apache Hive", "Java"],
+};
 ---
 <Section id="work" title="Where I’ve Worked">
   <div class="mt-4 mx-auto max-w-3xl space-y-6">
@@ -22,6 +72,16 @@ import fiservLogo from "../assets/Fiserv.png";
             <li>Built evaluation, freshness, and risk-scoring to monitor hallucination risk, source reliability, and data drift for continuous model QA.</li>
             <li>Operationalized training, evaluation, and deployment pipelines, reducing retraining cycles by 38% and improving query latency by 18% via optimization and caching.</li>
           </ul>
+          <div class="mt-3 flex flex-wrap items-center gap-2">
+            {stacks.referu.sort().map((t) => (
+              <span class="inline-flex items-center gap-1 rounded-md bg-zinc-100 px-2 py-0.5 text-xs text-zinc-700">
+                {slugMap[t] && (
+                  <img src={iconUrl(t)} alt={`${t} logo`} width="20" height="20" class="inline-block h-5 w-5 align-middle object-contain shrink-0" loading="lazy" decoding="async" />
+                )}
+                {t}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </a>
@@ -40,6 +100,16 @@ import fiservLogo from "../assets/Fiserv.png";
             <li>Improved pipeline performance via tuned joins, partitions, and memory usage, reducing processing delays by 32%.</li>
             <li>Partnered with analytics and platform teams to translate model outputs into dashboards on usage patterns, risk signals, and operational efficiency.</li>
           </ul>
+          <div class="mt-3 flex flex-wrap items-center gap-2">
+            {stacks.tectoro.sort().map((t) => (
+              <span class="inline-flex items-center gap-1 rounded-md bg-zinc-100 px-2 py-0.5 text-xs text-zinc-700">
+                {slugMap[t] && (
+                  <img src={iconUrl(t)} alt={`${t} logo`} width="20" height="20" class="inline-block h-5 w-5 align-middle object-contain shrink-0" loading="lazy" decoding="async" />
+                )}
+                {t}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </a>
@@ -57,6 +127,16 @@ import fiservLogo from "../assets/Fiserv.png";
             <li>Conducted root-cause analysis on incident patterns to enhance model explainability and improve alert precision by 8%.</li>
             <li>Automated data ingestion workflows in Hive + Java, improving operational analytics throughput by 35%.</li>
           </ul>
+          <div class="mt-3 flex flex-wrap items-center gap-2">
+            {stacks.dxc.sort().map((t) => (
+              <span class="inline-flex items-center gap-1 rounded-md bg-zinc-100 px-2 py-0.5 text-xs text-zinc-700">
+                {slugMap[t] && (
+                  <img src={iconUrl(t)} alt={`${t} logo`} width="20" height="20" class="inline-block h-5 w-5 align-middle object-contain shrink-0" loading="lazy" decoding="async" />
+                )}
+                {t}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </a>
@@ -68,12 +148,22 @@ import fiservLogo from "../assets/Fiserv.png";
           <h3 class="text-base md:text-lg font-semibold text-zinc-900 flex items-center gap-2">Software Engineer Intern · Fiserv
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16" class="text-zinc-500 transition-transform group-hover:text-[#15543c] group-hover:translate-x-0.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7"/><path d="M7 7h10v10"/></svg>
           </h3>
-          <div class="text-xs md:text-sm text-zinc-600">Location · Dates</div>
+          <div class="text-xs md:text-sm text-zinc-600">Chennai, India · July 2022-Sep 2022</div>
           <ul class="mt-2 list-disc pl-5 space-y-1 text-zinc-700">
             <li>Supported development of data-monitoring and anomaly-detection pipelines for enterprise infrastructure logs, enabling early identification of service-level deviations.</li>
             <li>Conducted root-cause analysis on incident patterns to enhance model explainability and improve alert precision by 8%.</li>
             <li>Automated data ingestion workflows in Hive + Java, improving operational analytics throughput by 35%.</li>
           </ul>
+          <div class="mt-3 flex flex-wrap items-center gap-2">
+            {stacks.fiserv.sort().map((t) => (
+              <span class="inline-flex items-center gap-1 rounded-md bg-zinc-100 px-2 py-0.5 text-xs text-zinc-700">
+                {slugMap[t] && (
+                  <img src={iconUrl(t)} alt={`${t} logo`} width="20" height="20" class="inline-block h-5 w-5 align-middle object-contain shrink-0" loading="lazy" decoding="async" />
+                )}
+                {t}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </a>
