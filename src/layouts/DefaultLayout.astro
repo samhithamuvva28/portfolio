@@ -84,8 +84,6 @@ import Contact from "../components/Contact.astro";
       }
       body.bg-noise .texture-overlay { display: block; }
       /* Small selector pill (desktop only) */
-      #bg-sampler { position: fixed; right: 1rem; bottom: 1rem; z-index: 60; }
-      #bg-sampler select { appearance: none; background: transparent; }
     </style>
   </head>
   <body class="bg-[#EAF7EF] text-zinc-900 antialiased" style="font-family: 'Times New Roman', Times, serif;">
@@ -100,18 +98,6 @@ import Contact from "../components/Contact.astro";
     <SocialBar />
     <Footer />
     <div id="texture-overlay" class="texture-overlay" aria-hidden="true"></div>
-    <div id="bg-sampler" class="hidden md:flex items-center gap-2 rounded-md bg-white/80 backdrop-blur px-2 py-1 text-xs text-zinc-700 shadow ring-1 ring-black/10">
-      <span>BG</span>
-      <select id="bg-select" aria-label="Background style">
-        <option value="plain">Plain</option>
-        <option value="soft">Soft gradient</option>
-        <option value="glow">Corner glow</option>
-        <option value="grid">Grid</option>
-        <option value="hatch">Hatch</option>
-        <option value="dots">Dots</option>
-        <option value="noise">Noise</option>
-      </select>
-    </div>
     <div class="cursor-ripple" aria-hidden="true"></div>
     <script>
       (function () {
@@ -132,24 +118,6 @@ import Contact from "../components/Contact.astro";
         } catch (e) {}
       })();
     </script>
-    <script>
-      (function(){
-        var styles = ['plain','soft','glow','grid','hatch','dots','noise'];
-        var body = document.body;
-        function apply(style){
-          styles.forEach(function(s){ body.classList.remove('bg-' + s); });
-          body.classList.add('bg-' + style);
-          try { localStorage.setItem('bg-style', style); } catch(e) {}
-        }
-        var saved = 'soft';
-        try { saved = localStorage.getItem('bg-style') || saved; } catch(e) {}
-        apply(saved);
-        var sel = document.getElementById('bg-select');
-        if (sel) {
-          sel.value = saved;
-          sel.addEventListener('change', function(){ apply(sel.value); });
-        }
-      })();
-    </script>
+    
   </body>
 </html>
