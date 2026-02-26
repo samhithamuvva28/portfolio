@@ -6,7 +6,6 @@ import pulsenet from "../assets/pulsenet.png";
 import ldmImage from "../assets/ldm.png";
 import fineTuningImage from "../assets/llmfinetuning.png";
 import politicastImg from "../assets/politicast.jpeg";
-import pocketrangerImg from "../assets/pocketranger.png";
 import awsLogo from "../assets/AWS.png";
 import powerbiLogo from "../assets/powerbi.jpg";
 const slugMap = {
@@ -57,6 +56,30 @@ const iconUrl = (name: string) => {
 
 const projects = [
   {
+    id: "llm-finetuning",
+    title: "Fine Tuning of Large Language Models",
+    href: "https://github.com/samhithamuvva28/DeepSeek_Simulation",
+    image: fineTuningImage.src,
+    techs: ["PyTorch", "Hugging Face", "NVIDIA", "Python"],
+    bullets: [
+      "Queue-based processing",
+      "Transactional writes",
+      "Metrics and alerts",
+    ],
+  },
+  {
+    id: "LDM",
+    title: "Visual Learning Assitant using Latent Diffusion",
+    href: "https://github.com/samhithamuvva28/Visual_Learning_Assitant_LDM",
+    image: ldmImage.src,
+    techs: ["BLIP", "PyTorch", "Hugging Face", "NVIDIA RTX 4090", "LLaVA-1.5-7B", "Torchvision"],
+    bullets: [
+      "ETL pipeline with retries",
+      "Containerized workers",
+      "Structured logging",
+    ],
+  },
+  {
     id: "catelytics",
     title: "Catelytics: A Review-Driven Categorization",
     href: "https://github.com/samhithamuvva28/CateLytics",
@@ -90,30 +113,6 @@ const projects = [
       "Static-first site with islands",
       "Accessible components",
       "Image optimization",
-    ],
-  },
-  {
-    id: "pocket ranger",
-    title: "EmbeddingGemma: Pocket Ranger",
-    href: "https://github.com/samhithamuvva28/PocketRanger_EmbeddingGemma",
-    image: pocketrangerImg.src,
-    techs: ["Python", "FAISS", "Gradio","API Endpoints"],
-    bullets: [
-      "Component library with Storybook",
-      "Unit tests with Jest/RTL",
-      "Tree-shaking friendly",
-    ],
-  },
-  {
-    id: "LDM",
-    title: "Visual Learning Assitant using Latent Diffusion",
-    href: "https://github.com/samhithamuvva28/Visual_Learning_Assitant_LDM",
-    image: ldmImage.src,
-    techs: ["BLIP", "PyTorch", "Hugging Face", "NVIDIA RTX 4090", "LLaVA-1.5-7B", "Torchvision"],
-    bullets: [
-      "ETL pipeline with retries",
-      "Containerized workers",
-      "Structured logging",
     ],
   },
   {
